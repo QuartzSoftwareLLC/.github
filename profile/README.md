@@ -1,5 +1,5 @@
 ## Hi there 👋
-We are Quartz
+We are Quartz. We specialize in medical data analytics. We'd love to help you!
 <!--
 
 **Here are some ideas to get you started:**
