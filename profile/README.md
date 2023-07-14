@@ -1,6 +1,3 @@
-
-# Quartz Software
-
 ## Overview
 
 Welcome to the Github page of  of Quartz Software, a specialized company that focuses on medical data management, analysis, and visualization. Our page will serve as a guide to our services, tools, and resources for effective data handling in the field of public health and other medical domains.
