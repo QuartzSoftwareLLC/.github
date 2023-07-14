@@ -1,12 +1,39 @@
-## Hi there 👋
-At Quartzsoftware we specialize in data extraction and analysis. Our focus is in public health as well as other aspects of the medical field. We help visualize medical data so that it is easily readable and can be used for advanced analysis.
-<!--
 
-**Here are some ideas to get you started:**
+# Quartz Software
 
-🙋‍♀️ A short introduction - what is your organization all about?
-🌈 Contribution guidelines - how can the community get involved?
-👩‍💻 Useful resources - where can the community find your docs? Is there anything else the community should know?
-🍿 Fun facts - what does your team eat for breakfast?
-🧙 Remember, you can do mighty things with the power of [Markdown](https://docs.github.com/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
--->
+## Overview
+
+Welcome to the Github page of  of Quartz Software, a specialized company that focuses on medical data management, analysis, and visualization. Our page will serve as a guide to our services, tools, and resources for effective data handling in the field of public health and other medical domains.
+
+
+## About Quartz Software
+At Quartz Software, we combine expertise in Python, R, and other programming languages with a deep understanding of medical data to provide innovative solutions for web scraping, data extraction, manipulation, and visualization. Our team delivers high-quality results, contributing to advancements in public health and various medical fields.
+
+
+## Services
+Web Scraping:  
+Extract valuable medical data from various online sources using advanced web scraping techniques and tools.
+
+Data Extraction:  
+Obtain structured datasets by extracting information accurately and efficiently.
+
+Data Manipulation:  
+Clean, aggregate, and restructure raw medical data to derive meaningful insights and facilitate analysis.
+
+Data Visualization:  
+Create visually appealing and intuitive representations of medical data using visualization tools and techniques in R and python.
+
+
+## Technologies and Languages
+Our primary languages include Python and R, which we proficiently utilize for medical data projects. Additionally, we are adaptable to using other programming languages and frameworks, ensuring the best fit for each project's requirements.
+
+## Contributing
+We welcome contributions from the open-source community.
+
+## Contact Us
+For inquiries, feedback, or collaboration opportunities, please reach out to us:
+
+Email: <span color="black">jacobclarke@quartzsoftware.com<span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Website: https://quartzsoftware.com/
+
+Thank you for your curiosity in Quartz Software. We are committed to unlocking the potential of your medical data and look forward to serving your needs with professionalism and expertise.
+
