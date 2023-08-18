@@ -2,6 +2,12 @@ name: Run Test R
 
 on:
   workflow_call:
+    inputs:
+      integration:
+        required: false
+        default: "FALSE"
+        type: string
+
 
 jobs:
   test:
@@ -9,4 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: quartzsoftwarellc/.github/actions/test-r@main
+        env:
+          INTEGRATION: ${{ inputs.integration }}
+
 
