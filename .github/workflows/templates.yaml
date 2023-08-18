@@ -8,7 +8,7 @@ jobs:
     runs-on: self-hosted
     steps:
     - name: echo
-      uses: quartzsoftwarellc/.gibhub/actions/echo.yaml@main
+      uses: quartzsoftwarellc/.github/actions/echo.yaml@main
       with:
         message: "hello"
   echo-workflow:
