@@ -3,7 +3,7 @@ kind: RunnerDeployment
 metadata:
   name: quartz-runner
 spec:
-  replicas: 2
+  replicas: 5
   template:
     spec:
       organization: quartzsoftwarellc
