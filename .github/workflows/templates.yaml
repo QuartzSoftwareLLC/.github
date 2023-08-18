@@ -11,5 +11,5 @@ jobs:
       uses: quartzsoftwarellc/.github/actions/echo@main
       with:
         message: "hello"
-  # echo-workflow:
-    # uses: quartzsoftwarellc/.github/workflows/echo.yaml@main
+  echo-workflow:
+    uses: quartzsoftwarellc/.github/workflows/echo.yaml@main
