@@ -12,7 +12,7 @@ jobs:
     runs-on: self-hosted
     steps:
     - name: echo
-      uses: ./.github/actions/echo
+      uses: quartzsoftwarellc/.github/actions/echo@main
       with:
         messae: ${{ inputs.message }}
 
