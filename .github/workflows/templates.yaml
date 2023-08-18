@@ -1,0 +1,15 @@
+name: Echoer
+
+on:
+  push:
+
+jobs:
+  echo-template-action:
+    runs-on: self-hosted
+    steps:
+    - name: echo
+      uses: quartzsoftwarellc/.gibhub/actions/echo.yaml
+      with:
+        message: "hello"
+  echo-workflow:
+    uses: quartzsoftwarellc/.github/workflows/echo.yaml
