@@ -1,0 +1,9 @@
+name: test-r
+
+runs:
+  using: "composite"
+  # Defining the action steps(Just one step to be simple)
+  steps:
+  - name: test-r
+    run: Rscript -e "devtools::test()"
+    shell: bash

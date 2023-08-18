@@ -8,11 +8,11 @@ on:
         type: string
 
 jobs:
-  triage:
+  echo:
     runs-on: self-hosted
     steps:
     - name: echo
       uses: quartzsoftwarellc/.github/actions/echo@main
       with:
-        messae: ${{ inputs.message }}
+        message: ${{ inputs.message }}
 
