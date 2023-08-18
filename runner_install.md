@@ -21,5 +21,3 @@ helm upgrade  --install \
   --set=authSecret.github_token={YOUR_TOKEN} \
   --wait \
   actions-runner-controller actions-runner-controller/actions-runner-controller
-
-
