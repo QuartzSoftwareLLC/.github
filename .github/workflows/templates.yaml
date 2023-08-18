@@ -12,4 +12,4 @@ jobs:
       with:
         message: "hello"
   echo-workflow:
-    uses: quartzsoftwarellc/.github/workflows/echo.yaml@main
+    uses: ./workflows/echo.yaml@main
