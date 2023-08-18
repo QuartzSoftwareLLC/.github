@@ -11,3 +11,4 @@ runs:
   steps:
   - name: echo
     run: echo ${{ inputs.message }}
+    shell: bash
