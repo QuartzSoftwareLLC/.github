@@ -1,4 +1,4 @@
-name: build
+name: deploy
 
 inputs:
   tag: 
@@ -8,6 +8,6 @@ runs:
   using: "composite"
   # Defining the action steps(Just one step to be simple)
   steps:
-  - name: Build
+  - name: Deploy
     run: build
     shell: bash
