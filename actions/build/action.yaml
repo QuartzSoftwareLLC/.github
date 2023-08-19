@@ -1,0 +1,13 @@
+name: build
+
+inputs:
+  tag: 
+    required: true
+
+runs:
+  using: "composite"
+  # Defining the action steps(Just one step to be simple)
+  steps:
+  - name: Build
+    run: build
+    shell: bash
