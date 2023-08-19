@@ -9,5 +9,5 @@ runs:
   # Defining the action steps(Just one step to be simple)
   steps:
   - name: Deploy
-    run: build
+    run: build ${{ inputs.tag }}
     shell: bash
