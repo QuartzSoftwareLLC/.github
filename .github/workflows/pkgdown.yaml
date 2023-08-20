@@ -4,7 +4,7 @@ name: Build Pkgdown Site Image and Push to Docker Repository
 on:
   workflow_call:
     inputs:
-      image:
+      subdomain:
         required: true
         type: string
 
@@ -17,7 +17,49 @@ jobs:
       - name: Build
         run: |
           Rscript -e 'devtools::build_site()'
+      - name: Prepare Docker and Kustomize
+        env:
+          SUBDOMAIN: ${{ inputs.subdomain }}
+        run: |
+          mkdir -p .argo/docs
+
+          # add kustomization.yaml
+          tee .argo/docs/kustomization.yaml <<EOF
+          resources:
+          - "https://github.com/quartzsoftwarellc/kustomize.git/nginx"
+
+          namePrefix: ${SUBDOMAIN}-
+
+          commonLabels:
+            app: ${SUBDOMAIN}
+
+          patches:
+          - patch: |-
+              - op: add
+                path: /spec/rules/0/host
+                value: ${SUBDOMAIN}.quartzsoftware.com
+              - op: add
+                path: /spec/tls/0
+                value:
+                  hosts:
+                  - ${SUBDOMAIN}.quartzsoftware.com
+                  secretName: ${SUBDOMAIN}-ingress-tls
+            target:
+              kind: Ingress
+
+          EOF
+
+          # add docker file
+          tee Dockerfile <<EOF
+
+          FROM nginx:alpine
+          COPY docs /usr/share/nginx/html
+
+          EOF
+
       - uses: quartzsoftwarellc/.github/actions/deploy@main
         with:
-          image: rscrapers-docs
+          image: ${{inputs.subdomain}}-docs
+          kustomize_dir: .argo/docs
+          branch: argo-docs
           github_token: ${{ secrets.GITHUB_TOKEN }}
