@@ -22,7 +22,7 @@ runs:
   - name: Build and Push Image
     run: |
       TAG=${IMAGE}:${SHA}
-      $(cd ${KUSTOMIZE_DIR} && kustomize edit set image app=localhost:32000/${TAG}
+      $(cd ${KUSTOMIZE_DIR} && kustomize edit set image app=localhost:32000/${TAG})
 
       docker buildx create --use --config /etc/buildkitd.toml
       docker buildx inspect --bootstrap
