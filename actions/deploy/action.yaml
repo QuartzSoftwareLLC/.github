@@ -3,7 +3,7 @@ name: deploy
 inputs:
   image: 
     required: true
-  kutomize_dir:
+  kustomize_dir:
     required: false
     default: ".argo"
     type: string
