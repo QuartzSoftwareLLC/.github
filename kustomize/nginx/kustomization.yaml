@@ -1,0 +1,33 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- ingress.yaml
+- deployment.yaml
+- svc.yaml
+
+
+# images:
+# - name: app
+#   newName: localhost:32000/rscrapers-docs
+#   newTag: 1.0.2
+
+
+# namePrefix: rscrapers-
+
+# commonLabels:
+#   app: rscrapers
+
+# patches:
+# - patch: |-
+#     - op: add
+#       path: /spec/rules/0/host
+#       value: rscrapers.quartzsoftware.com
+#     - op: add
+#       path: /spec/tls/0
+#       value:
+#         hosts:
+#         - rscrapers.quartzsoftware.com
+#         secretName: rscrapers-ingress-tls
+#   target:
+#     kind: Ingress
