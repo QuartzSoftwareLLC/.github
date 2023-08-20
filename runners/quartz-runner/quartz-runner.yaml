@@ -7,4 +7,4 @@ spec:
   template:
     spec:
       organization: quartzsoftwarellc
-      image: localhost:32000/quartz-runner:1.0.3
+      image: localhost:32000/quartz-runner:1.0.4

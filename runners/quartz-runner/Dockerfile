@@ -49,3 +49,6 @@ RUN Rscript -e 'pacman::p_load(aws.s3)'
 COPY --from=docker/buildx-bin /buildx /usr/libexec/docker/cli-plugins/docker-buildx
 
 COPY buildkitd.toml /etc/buildkitd.toml
+
+# install kustomize
+RUN curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | sudo bash
