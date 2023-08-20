@@ -1,0 +1,10 @@
+apiVersion: actions.summerwind.dev/v1alpha1
+kind: RunnerDeployment
+metadata:
+  name: quartz-public-runner
+spec:
+  replicas: 5
+  template:
+    spec:
+      repository: quartzsoftwarellc/quartz
+      image: localhost:32000/quartz-runner:1.0.5
