@@ -49,5 +49,3 @@ RUN Rscript -e 'pacman::p_load(aws.s3)'
 COPY --from=docker/buildx-bin /buildx /usr/libexec/docker/cli-plugins/docker-buildx
 
 COPY buildkitd.toml /etc/buildkitd.toml
-COPY build.sh /bin/build
-RUN sudo chmod +x /bin/build
