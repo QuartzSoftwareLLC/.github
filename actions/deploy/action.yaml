@@ -21,12 +21,16 @@ runs:
   steps:    
   - name: Build and Push Image
     run: |
-      IMAGE=${{inputs.image}}:{{sha}}
-      $(cd ${{inputs.kustomize_dir}} && kustomize edit set image app=localhost:32000/${IMAGE}
+      TAG=${IMAGE}:${SHA}
+      $(cd ${KUSTOMIZE_DIR} && kustomize edit set image app=localhost:32000/${TAG}
 
       docker buildx create --use --config /etc/buildkitd.toml
       docker buildx inspect --bootstrap
-      docker buildx build . -t registry.container-registry:5000/${IMAGE} --push
+      docker buildx build . -t registry.container-registry:5000/${TAG} --push
+    env:
+      IMAGE: ${{inputs.image}
+      SHA: {{sha}}
+      KUSTOMIZE_DIR: ${{inputs.kustomize_dir}}
     shell: bash
   - name: Deploy
     uses: s0/git-publish-subdir-action@develop
