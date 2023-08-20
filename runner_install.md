@@ -18,6 +18,6 @@ helm upgrade  --install \
   --namespace actions-runner-system \
   --create-namespace \
   --set=authSecret.create=true \
-  --set=authSecret.github_token={YOUR_TOKEN} \
+  --set=authSecret.github_token=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 \
   --wait \
   actions-runner-controller actions-runner-controller/actions-runner-controller
