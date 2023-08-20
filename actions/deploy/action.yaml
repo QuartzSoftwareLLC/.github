@@ -28,7 +28,7 @@ runs:
       docker buildx inspect --bootstrap
       docker buildx build . -t registry.container-registry:5000/${TAG} --push
     env:
-      IMAGE: ${{inputs.image}
+      IMAGE: ${{inputs.image}}
       SHA: ${{github.sha}}
       KUSTOMIZE_DIR: ${{inputs.kustomize_dir}}
     shell: bash
