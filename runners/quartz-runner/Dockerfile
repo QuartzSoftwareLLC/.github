@@ -54,3 +54,7 @@ COPY buildkitd.toml /etc/buildkitd.toml
 RUN curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | sudo bash
 
 RUN sudo mv kustomize /usr/bin/kustomize
+
+RUN sudo apt install -y \
+    r-cran-fst \
+    r-cran-fstcore
