@@ -1,0 +1,10 @@
+name: Build Docker
+
+on:
+  release:
+
+jobs:
+  call-build-docker:
+    uses: quartzsoftwarellc/.github/.github/workflows/pkgdown.yaml@main
+    with:
+      image:  
