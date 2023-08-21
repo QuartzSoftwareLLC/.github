@@ -10,9 +10,9 @@ runs:
   steps:    
   - name: Build and Push Image
     run: |
-      docker buildx create --use --config /etc/buildkitd.toml
-      docker buildx inspect --bootstrap
-      docker buildx build . -t registry.container-registry:5000/${IMAGE}:${SHA} --push
+      # docker buildx create --use --config /etc/buildkitd.toml
+      # docker buildx inspect --bootstrap
+      docker build . -t registry.container-registry:5000/${IMAGE}:${SHA} --push
     env:
       IMAGE: ${{inputs.image}}
       SHA: ${{github.sha}}
