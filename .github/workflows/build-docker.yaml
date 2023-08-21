@@ -1,0 +1,22 @@
+# .github/workflows/publish.yml
+name: Build and Push Docker Image
+
+on:
+  workflow_call:
+    inputs:
+      image:
+        required: true
+        type: string
+
+jobs:
+  build:
+    runs-on: self-hosted
+    name: Build and Push
+    steps:
+      - uses: actions/checkout@v2
+      - uses: quartzsoftwarellc/.github/actions/deploy@main
+        with:
+          image: ${{inputs.image}}
+          kustomize_dir: .argo/docs
+          branch: argo-docs
+          github_token: ${{ secrets.GITHUB_TOKEN }}

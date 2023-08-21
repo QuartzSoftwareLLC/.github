@@ -21,34 +21,6 @@ jobs:
         env:
           SUBDOMAIN: ${{ inputs.subdomain }}
         run: |
-          mkdir -p .argo/docs
-
-          # add kustomization.yaml
-          tee .argo/docs/kustomization.yaml <<EOF
-          resources:
-          - "https://github.com/quartzsoftwarellc/kustomize.git/nginx"
-
-          namePrefix: ${SUBDOMAIN}-
-
-          commonLabels:
-            app: ${SUBDOMAIN}
-
-          patches:
-          - patch: |-
-              - op: add
-                path: /spec/rules/0/host
-                value: ${SUBDOMAIN}.quartzsoftware.com
-              - op: add
-                path: /spec/tls/0
-                value:
-                  hosts:
-                  - ${SUBDOMAIN}.quartzsoftware.com
-                  secretName: ${SUBDOMAIN}-ingress-tls
-            target:
-              kind: Ingress
-
-          EOF
-
           # add docker file
           tee Dockerfile <<EOF
 
@@ -60,6 +32,3 @@ jobs:
       - uses: quartzsoftwarellc/.github/actions/deploy@main
         with:
           image: ${{inputs.subdomain}}-docs
-          kustomize_dir: .argo/docs
-          branch: argo-docs
-          github_token: ${{ secrets.GITHUB_TOKEN }}

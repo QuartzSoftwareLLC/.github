@@ -1,19 +1,8 @@
-name: deploy
+name: build and push image
 
 inputs:
   image: 
     required: true
-  kustomize_dir:
-    required: false
-    default: ".argo"
-    type: string
-  branch:
-    required: false
-    default: "argo"
-    type: string
-  github_token: 
-    required: true
-    type: string
 
 runs:
   using: "composite"
@@ -21,22 +10,10 @@ runs:
   steps:    
   - name: Build and Push Image
     run: |
-      TAG=${IMAGE}:${SHA}
-      $(cd ${KUSTOMIZE_DIR} && kustomize edit set image app=localhost:32000/${TAG})
-
       docker buildx create --use --config /etc/buildkitd.toml
       docker buildx inspect --bootstrap
-      docker buildx build . -t registry.container-registry:5000/${TAG} --push
+      docker buildx build . -t registry.container-registry:5000/${IMAGE}:${SHA} --push
     env:
       IMAGE: ${{inputs.image}}
       SHA: ${{github.sha}}
-      KUSTOMIZE_DIR: ${{inputs.kustomize_dir}}
     shell: bash
-  - name: Deploy
-    uses: s0/git-publish-subdir-action@develop
-    env:
-      REPO: self
-      BRANCH: ${{inputs.branch}} # The branch name where you want to push the assets
-      FOLDER: ${{inputs.kustomize_dir}} # The directory where your assets are generated
-      GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }} # GitHub will automatically add this - you don't need to bother getting a token
-      MESSAGE: "Build: ({sha}) {msg}" # The commit message
