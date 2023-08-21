@@ -5,6 +5,6 @@ on:
 
 jobs:
   call-build-docker:
-    uses: quartzsoftwarellc/.github/.github/workflows/pkgdown.yaml@main
+    uses: quartzsoftwarellc/.github/.github/workflows/build-docker.yaml@main
     with:
       image:  
